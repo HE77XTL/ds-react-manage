@@ -3,6 +3,7 @@ import styles from './reduxExample.module.less'
 import Comment from './comment'
 import ToggleLanguage from './toggleLanguage'
 import AsyncChange from './asyncChange'
+import { Radio } from 'antd';
 
 
 const ReduxExample = function () {
@@ -22,6 +23,7 @@ const ReduxExample = function () {
 //--- function ----------------------
 
     return (<div className={styles.reduxExample}>
+        <Radio>Radio</Radio>
         <div className={styles.reduxExample}>
             页面公共部分
             <h3>标题： {article.title}</h3>

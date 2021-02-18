@@ -1,6 +1,8 @@
 const {override, fixBabelImports, addLessLoader, addWebpackAlias} = require("customize-cra");
 const path = require("path");
 
+// ant 官方用的是 craco
+
 module.exports = override(
     // 针对antd 实现按需打包：根据import来打包 (使用babel-plugin-import)
     fixBabelImports("import", {
@@ -14,8 +16,9 @@ module.exports = override(
         lessOptions: {
             javascriptEnabled: true,
             modifyVars: {
-                '@primary-color': '#ffaa22',
-                '@link-color': '#ffaa22'
+                'primary-color': '#1DA57A',
+                'btn-danger-color': '#1DA57A',
+                //@btn-danger-color: #fff;
             }
         },
     }),

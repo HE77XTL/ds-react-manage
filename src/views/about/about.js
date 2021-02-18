@@ -1,13 +1,14 @@
 import React from 'react';
-import { Button } from 'antd';
+import {Button} from 'antd';
 import styles from './about.module.less'
 
-const About  = function () {
-    return(
+const About = function () {
+    return (
         <div className={styles.title}>
             About
             <div>
                 <Button>ant btn</Button>
+                <Button type='danger'>danger</Button>
             </div>
 
         </div>

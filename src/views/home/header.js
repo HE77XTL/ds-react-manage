@@ -26,7 +26,7 @@ const Header = function ({menuStatus, dispatch}) {
 
     return (<div className={`${styles.header} ${menuStatus ? styles.collapsed : null}`}>
         header
-        <Button onClick={onCollapse}>toggle</Button>
+        <Button type='primary' onClick={onCollapse}>toggle</Button>
     </div>)
 };
 
