@@ -9,6 +9,7 @@ module.exports = override(
         style: 'css', //自动打包相关的样式 默认为 style:'css'
     }),
     // 使用less-loader对源码重的less的变量进行重新制定
+    // 如果报错请检查less 以及less-loader 版本； 项目使用版本为： less@4.0.0 less-load@7.2.1
     addLessLoader({
         lessOptions: {
             javascriptEnabled: true,
@@ -23,6 +24,3 @@ module.exports = override(
         '@': path.resolve('./src')
     })
 );
-
-
-//yarn add cross-env

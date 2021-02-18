@@ -9,14 +9,14 @@ import store from "store";
 // (tip move them in a JSON file and import them)
 
 // 多语言，会默认先读取 缓存，如没有，默认英文
-const languageType = store.get('languageType') || 'zh';
+const languageType = store.get('languageType') || 'zh_cn';
 
 
 const resources = {
-    en: {
+    en_us: {
         translation: PageEn
     },
-    zh: {
+    zh_cn: {
         translation: PageZh
     }
 };
