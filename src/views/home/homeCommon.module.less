@@ -1,0 +1,58 @@
+@headerHeight: 60px;
+@menuWidth: 200px;
+@menuCollapsedWidth: 50px;
+@collapseTransition: all .3s linear;
+
+.home {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100vw;
+    height: @headerHeight;
+    padding-left: @menuWidth;
+    border: 1px solid red;
+    transition: @collapseTransition;
+}
+
+.header.collapsed {
+    padding-left: @menuCollapsedWidth;
+}
+
+.menu {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: @menuWidth;
+    height: 100vh;
+    border: 1px solid green;
+    background: #cccccc;
+    transition: @collapseTransition;
+}
+
+.menu.collapsed {
+    color: red;
+    width: @menuCollapsedWidth;
+}
+
+
+.content {
+    box-sizing: border-box;
+    position: absolute;
+    left: @menuWidth;
+    top: @headerHeight;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding: 10px;
+    transition: @collapseTransition;
+}
+
+.content.collapsed {
+    left: @menuCollapsedWidth;
+}

@@ -4,8 +4,20 @@ import {useTranslation} from "react-i18next";
 import store from 'store'
 import {Button, DatePicker} from 'antd'
 import HomeRouter from '../../router/home'
+import {connect} from "react-redux";
 
-const Home = function () {
+import Header from './header'
+import Menu from './menu'
+import styles from './homeCommon.module.less'
+
+
+const mapStateToProps = state => {
+    return {
+        menuStatus: state.menuStatus,
+    }
+};
+
+const Home = function ({menuStatus}) {
     const {t} = useTranslation();
 
 //--- useState ----------------------
@@ -16,18 +28,13 @@ const Home = function () {
 //--- function ----------------------
 
 
-    return (<div>
-        <h2>homePage</h2>
-        <h3>
-            {t('helloWorld')}
-        </h3>
-        <div>
-            <DatePicker/>
-        </div>
-        <div style={{padding: '20px'}}>
+    return (<div className={styles.home}>
+        <Header/>
+        <Menu/>
+        <div className={`${styles.content} ${menuStatus ? styles.collapsed : null} `}>
             <HomeRouter/>
         </div>
     </div>)
 }
 
-export default Home
+export default connect(mapStateToProps)(Home)
