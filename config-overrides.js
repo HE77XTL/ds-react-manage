@@ -8,7 +8,7 @@ module.exports = override(
     fixBabelImports("import", {
         libraryName: "antd",
         libraryDirectory: "es",
-        style: 'css', //自动打包相关的样式 默认为 style:'css'
+        style: true,
     }),
     // 使用less-loader对源码重的less的变量进行重新制定
     // 如果报错请检查less 以及less-loader 版本； 项目使用版本为： less@4.0.0 less-load@7.2.1
@@ -16,9 +16,22 @@ module.exports = override(
         lessOptions: {
             javascriptEnabled: true,
             modifyVars: {
-                'primary-color': '#1DA57A',
-                'btn-danger-color': '#1DA57A',
-                //@btn-danger-color: #fff;
+                '@primary-color': '#3963bc',
+
+                '@menu-dark-color': '#c4c9d2',
+                '@menu-dark-selected-item-icon-color': '#3963bc',
+                '@menu-dark-selected-item-text-color': '#3963bc',
+
+                '@menu-dark-bg': '#192a5e',
+                '@menu-dark-inline-submenu-bg': '#122150',
+                '@menu-dark-item-active-bg': '#122150',
+
+                '@menu-dark-highlight-color': '#3963bc',
+                '@menu-dark-arrow-color': '#3963bc',
+
+                '@menu-collapsed-width': '60px',
+
+                //@menu-collapsed-width
             }
         },
     }),

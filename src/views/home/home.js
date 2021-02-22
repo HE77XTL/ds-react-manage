@@ -5,6 +5,7 @@ import store from 'store'
 import {Button, DatePicker} from 'antd'
 import HomeRouter from '../../router/home'
 import {connect} from "react-redux";
+import {useHistory} from 'react-router-dom'
 
 import Header from './header'
 import Menu from './menu'
@@ -18,6 +19,8 @@ const mapStateToProps = state => {
 };
 
 const Home = function ({menuStatus}) {
+    const history = useHistory();
+    const currentUrl = history.location.pathname;
     const {t} = useTranslation();
 
 //--- useState ----------------------
@@ -30,7 +33,7 @@ const Home = function ({menuStatus}) {
 
     return (<div className={styles.home}>
         <Header/>
-        <Menu/>
+        <Menu currentUrl={currentUrl}/>
         <div className={`${styles.content} ${menuStatus ? styles.collapsed : null} `}>
             <HomeRouter/>
         </div>

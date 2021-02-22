@@ -1,6 +1,6 @@
 @headerHeight: 60px;
 @menuWidth: 200px;
-@menuCollapsedWidth: 50px;
+@menuCollapsedWidth: 60px;
 @collapseTransition: all .3s linear;
 
 .home {
@@ -10,32 +10,42 @@
 }
 
 .header {
+    display: flex;
+    align-items: center;
     box-sizing: border-box;
     position: absolute;
     width: 100vw;
     height: @headerHeight;
-    padding-left: @menuWidth;
-    border: 1px solid red;
+    padding: 4px 6px;
+    box-shadow: 1px 2px 3px rgb(0 0 0 / 10%);
     transition: @collapseTransition;
+    .logoWrap {
+        width: 220px;
+        img {
+            height: 40px;
+        }
+    }
+    .toggleBtn {
+        flex: 1;
+    }
 }
 
 .header.collapsed {
-    padding-left: @menuCollapsedWidth;
+
 }
 
 .menu {
     box-sizing: border-box;
     position: absolute;
-    top: 0;
+    top: @headerHeight;
+    bottom: 0;
     left: 0;
     width: @menuWidth;
-    height: 100vh;
-    background: #001529;
+    background: #192a5e;
     transition: @collapseTransition;
 }
 
 .menu.collapsed {
-    color: red;
     width: @menuCollapsedWidth;
 }
 

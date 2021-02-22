@@ -5,7 +5,9 @@ const zh_cn = {
     userName: '用户名',
     password: '密码',
     submit: '提交',
-
+    language: '切换语言',
+    userCenter: '个人中心',
+    logout: '退出',
 }
 
 export default zh_cn;

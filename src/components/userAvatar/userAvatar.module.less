@@ -1,0 +1,34 @@
+.userAvatar {
+    padding: 4px 6px;
+    margin: 0 4px;
+    cursor: pointer;
+    .userCard {
+        display: flex;
+        align-items: center;
+        img {
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+        }
+        .userName {
+            max-width: 80px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin-left: 8px;
+        }
+    }
+}
+
+.avatarItem {
+    cursor: pointer;
+    padding: 4px 0;
+    &:hover {
+        color: #1890ff;
+    }
+}
+
+.avatarItem:not(:last-child) {
+    border-bottom: 1px solid #cccccc;
+
+}

@@ -5,6 +5,9 @@ const en_us = {
     userName: 'userName',
     password: 'password',
     submit: 'Submit',
+    language: 'Language',
+    userCenter: 'User Center',
+    logout: 'Logout',
 }
 
 export default en_us;

@@ -8,6 +8,8 @@ import {
 import {ConfigProvider} from 'antd'
 import {connect} from "react-redux";
 
+import '../assets/css/index.less'
+
 import Home from '../views/home/home'
 import Login from '../views/login/login'
 

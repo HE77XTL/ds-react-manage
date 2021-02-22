@@ -3,6 +3,10 @@ import {Button} from "antd";
 import {connect} from 'react-redux'
 import styles from './homeCommon.module.less'
 import {menuCollapse} from '../../actions/index'
+import Logo from "../../assets/image/headerLogo.jpg";
+import LanguageChange from '../../components/languageChange/languageChange'
+import UserAvatar from '../../components/userAvatar/userAvatar'
+import {MenuFoldOutlined, MenuUnfoldOutlined} from '@ant-design/icons'
 
 const mapStateToProps = state => {
     return {
@@ -11,10 +15,7 @@ const mapStateToProps = state => {
 };
 
 const Header = function ({menuStatus, dispatch}) {
-
-    console.log('menuStatus7777')
-    console.log(menuStatus)
-
+    console.log(11111111)
 //--- useState ----------------------
 
 //--- useEffect ----------------------
@@ -25,8 +26,14 @@ const Header = function ({menuStatus, dispatch}) {
     }
 
     return (<div className={`${styles.header} ${menuStatus ? styles.collapsed : null}`}>
-        header
-        <Button type='primary' onClick={onCollapse}>toggle</Button>
+        <div className={styles.logoWrap}>
+            <img src={Logo} alt="logo"/>
+        </div>
+        <div className={styles.toggleBtn}>
+            {menuStatus ? <MenuUnfoldOutlined onClick={onCollapse}/> : <MenuFoldOutlined onClick={onCollapse}/>}
+        </div>
+        <UserAvatar/>
+        <LanguageChange/>
     </div>)
 };
 
